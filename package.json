@@ -6,7 +6,8 @@
   "scripts": {
     "watch": "tsc -w",
     "dev": "nodemon dist/index.js",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "clean": "rimraf dist"
   },
   "author": "",
   "license": "ISC",
@@ -17,10 +18,18 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@mikro-orm/cli": "^5.7.4",
-    "@mikro-orm/core": "^5.7.4",
-    "@mikro-orm/migrations": "^5.7.4",
-    "@mikro-orm/postgresql": "^5.7.4",
-    "pg": "^8.10.0"
+    "@mikro-orm/cli": "^4.5.10",
+    "@mikro-orm/core": "^4.5.10",
+    "@mikro-orm/migrations": "^4.5.10",
+    "@mikro-orm/postgresql": "^4.5.10",
+    "pg": "^8.10.0",
+    "rimraf": "^5.0.0"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/mikro-orm.config.ts",
+      "./dist/mikro-orm.config.js"
+    ]
   }
 }
