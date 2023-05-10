@@ -10,6 +10,9 @@ const main = async () => {
   //   title: "my first post",
   // });
   // await orm.em.persistAndFlush(post);
+
+  const posts = await orm.em.find(Post, {});
+  console.log(posts);
 };
 
 main().catch((err) => {
