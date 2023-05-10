@@ -5,7 +5,6 @@ import mikroOrmConfig from "./mikro-orm.config";
 
 const main = async () => {
   const orm = await MikroORM.init(mikroOrmConfig);
-  await orm.getMigrator().createMigration();
   await orm.getMigrator().up();
   const post = orm.em.create(Post, {
     title: "my first post",
